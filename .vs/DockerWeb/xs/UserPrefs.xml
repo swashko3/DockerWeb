@@ -1,22 +1,28 @@
 ﻿<Properties StartupConfiguration="{2CBBB081-94C9-44E5-A27A-33233199BEBF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DockerWeb/Services/DbService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReadMe.md">
     <Files>
       <File FileName="DockerWeb/Services/DbService.cs" Line="30" Column="66" />
       <File FileName="DockerWeb/Startup.cs" />
       <File FileName="DockerWebDbService/Startup.cs" />
-      <File FileName="docker-compose.yml" />
+      <File FileName="docker-compose.yml" Line="49" Column="3" />
+      <File FileName="ReadMe.md" Line="56" Column="38" />
+      <File FileName="DockerWeb/appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DockerWeb" expanded="True">
+            <Node name="Solution Items" expanded="True" />
             <Node name="docker-compose" expanded="True">
               <Node name="docker-compose.yml" expanded="True" />
             </Node>
             <Node name="DockerWeb" expanded="True">
-              <Node name="Services" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="DbService.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="DockerWebDbService" expanded="True" selected="True" />
+            <Node name="DockerWebDbService" expanded="True" />
           </Node>
         </State>
       </Pad>
