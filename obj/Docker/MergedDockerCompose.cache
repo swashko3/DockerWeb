@@ -1,0 +1,54 @@
+networks:
+  dockerweb-net:
+    driver: bridge
+services:
+  db:
+    container_name: dockerweb_db
+    environment:
+      POSTGRES_DB: DockerWebDB
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    image: postgres:latest
+    networks:
+      dockerweb-net: {}
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - source: webapidb-data
+      target: /var/lib/postgresql/data
+      type: volume
+  dockerweb:
+    build:
+      context: /Users/stephenwashko/Projects/DockerWeb
+      dockerfile: DockerWeb/Dockerfile
+    depends_on:
+    - dockerwebdbservice
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ServiceHost: dockerwebdbservice
+    image: dockerweb
+    networks:
+      dockerweb-net: {}
+    ports:
+    - published: 5003
+      target: 5003
+  dockerwebdbservice:
+    build:
+      context: /Users/stephenwashko/Projects/DockerWeb
+      dockerfile: DockerWebDbService/Dockerfile
+    depends_on:
+    - db
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      DefaultConnection: Host=db;Port=5432;Username=postgres;Password=password;Database=DockerWebApiDB;
+    image: dockerwebdbservice
+    networks:
+      dockerweb-net: {}
+    ports:
+    - published: 5002
+      target: 5002
+version: '3.4'
+volumes:
+  webapidb-data: {}

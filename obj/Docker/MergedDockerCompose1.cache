@@ -1,0 +1,96 @@
+networks:
+  dockerweb-net:
+    driver: bridge
+services:
+  db:
+    container_name: dockerweb_db
+    environment:
+      POSTGRES_DB: DockerWebDB
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    image: postgres:latest
+    networks:
+      dockerweb-net: {}
+    ports:
+    - published: 5432
+      target: 5432
+    restart: always
+    volumes:
+    - source: webapidb-data
+      target: /var/lib/postgresql/data
+      type: volume
+  dockerweb:
+    build:
+      context: /Users/stephenwashko/Projects/DockerWeb
+      dockerfile: DockerWeb/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: DockerWeb
+      target: base
+    container_name: DockerWeb
+    depends_on:
+    - dockerwebdbservice
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+      ServiceHost: dockerwebdbservice
+    image: dockerweb:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/netcoreapp3.1/DockerWeb.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      dockerweb-net: {}
+    ports:
+    - published: 5003
+      target: 5003
+    tty: true
+    volumes:
+    - /Users/stephenwashko/Projects/DockerWeb/DockerWeb:/app:rw
+    - /Users/stephenwashko/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/stephenwashko/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/stephenwashko/Projects/DockerWeb:/src:rw
+  dockerwebdbservice:
+    build:
+      context: /Users/stephenwashko/Projects/DockerWeb
+      dockerfile: DockerWebDbService/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: DockerWebDbService
+      target: base
+    container_name: DockerWebDbService
+    depends_on:
+    - db
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      DefaultConnection: Host=db;Port=5432;Username=postgres;Password=password;Database=DockerWebApiDB;
+      NUGET_FALLBACK_PACKAGES: ''
+    image: dockerwebdbservice:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/netcoreapp3.1/DockerWebDbService.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      dockerweb-net: {}
+    ports:
+    - published: 5002
+      target: 5002
+    tty: true
+    volumes:
+    - /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService:/app:rw
+    - /Users/stephenwashko/vsdbg/vs2017u5:/remote_debugger:rw
+    - /Users/stephenwashko/.nuget/packages:/root/.nuget/packages:ro
+    - /Users/stephenwashko/Projects/DockerWeb:/src:rw
+version: '3.4'
+volumes:
+  webapidb-data: {}
