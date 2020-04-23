@@ -31,7 +31,6 @@
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.csprojAssemblyReference.cache
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.csproj.CoreCompileInputs.cache
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.MvcApplicationPartsAssemblyInfo.cs
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.MvcApplicationPartsAssemblyInfo.cache
@@ -44,3 +43,4 @@
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.dll
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.pdb
 /Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.genruntimeconfig.cache
+/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/Debug/netcoreapp3.1/DockerWebDbService.csprojAssemblyReference.cache

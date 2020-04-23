@@ -11,6 +11,7 @@
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Swashbuckle.AspNetCore.Swagger.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.OpenApi.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.EntityFrameworkCore.dll
+/Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.Extensions.Options.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll
@@ -21,7 +22,6 @@
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.Extensions.Logging.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.Extensions.Caching.Memory.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/Npgsql.dll
-/Users/stephenwashko/Projects/DockerWeb/bin/Debug/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/DockerWeb.pdb
 /Users/stephenwashko/Projects/DockerWeb/bin/Debug/DockerWebDbService.pdb
 /Users/stephenwashko/Projects/DockerWeb/obj/Debug/docker-compose.dcprojAssemblyReference.cache

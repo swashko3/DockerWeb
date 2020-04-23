@@ -10,6 +10,7 @@
 /Users/stephenwashko/Projects/DockerWeb/DockerWeb/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
 /Users/stephenwashko/Projects/DockerWeb/DockerWeb/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/stephenwashko/Projects/DockerWeb/DockerWeb/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/stephenwashko/Projects/DockerWeb/DockerWeb/obj/Debug/netcoreapp3.1/DockerWeb.csprojAssemblyReference.cache
 /Users/stephenwashko/Projects/DockerWeb/DockerWeb/obj/Debug/netcoreapp3.1/DockerWeb.csproj.CoreCompileInputs.cache
 /Users/stephenwashko/Projects/DockerWeb/DockerWeb/obj/Debug/netcoreapp3.1/DockerWeb.MvcApplicationPartsAssemblyInfo.cs
 /Users/stephenwashko/Projects/DockerWeb/DockerWeb/obj/Debug/netcoreapp3.1/DockerWeb.MvcApplicationPartsAssemblyInfo.cache

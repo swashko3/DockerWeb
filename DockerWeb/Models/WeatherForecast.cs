@@ -4,6 +4,8 @@ namespace DockerWeb.Models
 {
     public class WeatherForecast
     {
+        public Guid ID { get; set; }
+
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }

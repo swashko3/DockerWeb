@@ -7,5 +7,9 @@ namespace DockerWebDbService.Models
         public DbSet<WeatherForecast> WeatherForecast { get; set; }
 
         public WeatherForecastContext(DbContextOptions<WeatherForecastContext> options) : base(options) { }
+
+        public WeatherForecastContext()
+        {
+        }
     }
 }

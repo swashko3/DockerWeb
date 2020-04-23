@@ -1,0 +1,7 @@
+﻿[
+    {"ID":"725c4516-96af-4735-bfb3-a2a1579e8059","Date":"2020-04-07T18:22:28.118605","TemperatureC":15,"TemperatureF":59,"Summary":"Initial"},
+    {"ID":"35042e2c-433b-4632-ba0d-1d0f88dc9682","Date":"2020-04-06T18:22:47.385","TemperatureC":16,"TemperatureF":0,"Summary":"string 1"},
+    {"ID":"232c1375-783e-4be5-a6a3-9b327b218d3d","Date":"2020-04-05T00:00:00","TemperatureC":17,"TemperatureF":62,"Summary":"Test from web"},
+    {"ID":"8d0049f4-43c5-4ee7-a43f-7115af0986bb","Date":"2020-04-01T00:00:00","TemperatureC":18,"TemperatureF":64,"Summary":"HAHAHA"},
+    {"ID":"9ce83c5f-2710-49f1-abab-e86e2a28455d","Date":"2020-04-10T18:22:28.118605","TemperatureC":17,"TemperatureF":62,"Summary":"Test 12"}
+]

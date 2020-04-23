@@ -1,0 +1,217 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/stephenwashko/Projects/DockerWeb/DockerWebTest/DockerWebTest.csproj": {}
+  },
+  "projects": {
+    "/Users/stephenwashko/Projects/DockerWeb/DockerWeb/DockerWeb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/stephenwashko/Projects/DockerWeb/DockerWeb/DockerWeb.csproj",
+        "projectName": "DockerWeb",
+        "projectPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWeb/DockerWeb.csproj",
+        "packagesPath": "/Users/stephenwashko/.nuget/packages/",
+        "outputPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWeb/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/stephenwashko/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.3.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/DockerWebDbService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/DockerWebDbService.csproj",
+        "projectName": "DockerWebDbService",
+        "projectPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/DockerWebDbService.csproj",
+        "packagesPath": "/Users/stephenwashko/.nuget/packages/",
+        "outputPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/stephenwashko/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.3.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/stephenwashko/Projects/DockerWeb/DockerWebTest/DockerWebTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/stephenwashko/Projects/DockerWeb/DockerWebTest/DockerWebTest.csproj",
+        "projectName": "DockerWebTest",
+        "projectPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWebTest/DockerWebTest.csproj",
+        "packagesPath": "/Users/stephenwashko/.nuget/packages/",
+        "outputPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWebTest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/stephenwashko/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/stephenwashko/Projects/DockerWeb/DockerWeb/DockerWeb.csproj": {
+                "projectPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWeb/DockerWeb.csproj"
+              },
+              "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/DockerWebDbService.csproj": {
+                "projectPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/DockerWebDbService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.6.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.13.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.16.1, )"
+            },
+            "nunit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

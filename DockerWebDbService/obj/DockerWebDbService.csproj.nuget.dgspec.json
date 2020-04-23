@@ -14,7 +14,7 @@
         "outputPath": "/Users/stephenwashko/Projects/DockerWeb/DockerWebDbService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/stephenwashko/.nuget/NuGet/NuGet.Config"
+          "/Users/stephenwashko/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -52,7 +52,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.3.1, )"
+              "version": "[5.3.3, )"
             }
           },
           "imports": [

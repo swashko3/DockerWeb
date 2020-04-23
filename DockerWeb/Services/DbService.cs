@@ -5,11 +5,12 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using DockerWeb.Interfaces;
 using DockerWeb.Models;
 
 namespace DockerWeb.Services
 {
-    public class DBService
+    public class DBService: IDbService
     {
         public HttpClient Client { get; }
 

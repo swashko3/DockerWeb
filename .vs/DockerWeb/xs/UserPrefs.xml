@@ -1,29 +1,34 @@
-﻿<Properties StartupConfiguration="{2CBBB081-94C9-44E5-A27A-33233199BEBF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReadMe.md">
+﻿<Properties StartupConfiguration="{F4EDF332-A5DB-49EE-9483-5D31829AC5F1}|Default">
+  <MonoDevelop.Ide.ItemProperties.DockerWebTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DockerWebTest/Extensions/DbSetExtension.cs">
     <Files>
-      <File FileName="DockerWeb/Services/DbService.cs" Line="30" Column="66" />
+      <File FileName="DockerWebDbService/Controllers/WeatherForecastController.cs" Line="25" Column="18" />
+      <File FileName="DockerWebTest/Extensions/DbSetExtension.cs" Line="28" Column="1" />
+      <File FileName="DockerWeb/Interfaces/IDbService.cs" />
+      <File FileName="DockerWeb/Services/DbService.cs" />
       <File FileName="DockerWeb/Startup.cs" />
-      <File FileName="DockerWebDbService/Startup.cs" />
-      <File FileName="docker-compose.yml" Line="49" Column="3" />
-      <File FileName="ReadMe.md" Line="56" Column="38" />
-      <File FileName="DockerWeb/appsettings.json" Line="1" Column="1" />
+      <File FileName="DockerWeb/Controllers/WeatherForecastController.cs" />
+      <File FileName="DockerWebTest/DockerWebTest.cs" />
+      <File FileName="DockerWebTest/DockerWebDbServiceTest.cs" />
+      <File FileName="DockerWebTest/Extensions/LoadResource.cs" />
+      <File FileName="DockerWeb/Models/WeatherForecast.cs" />
+      <File FileName="DockerWebDbService/Models/WeatherForecastContext.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DockerWeb" expanded="True">
-            <Node name="Solution Items" expanded="True" />
-            <Node name="docker-compose" expanded="True">
-              <Node name="docker-compose.yml" expanded="True" />
-            </Node>
-            <Node name="DockerWeb" expanded="True">
-              <Node name="Properties" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="DbService.cs" selected="True" />
+            <Node name="DockerWebTest" expanded="True">
+              <Node name="Extensions" expanded="True">
+                <Node name="DbSetExtension.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="DockerWebDbService" expanded="True" />
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="DockerWeb" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -33,7 +38,9 @@
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.DockerWeb PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/stephenwashko/Projects/DockerWeb/DockerWebTest/DockerWebTest.cs" relfile="DockerWebTest/DockerWebTest.cs" line="144" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

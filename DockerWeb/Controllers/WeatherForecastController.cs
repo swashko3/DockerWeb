@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using DockerWeb.Models;
 using System.Net.Http;
-using DockerWeb.Services;
+using DockerWeb.Interfaces;
 using System.Net;
+using DockerWeb.Models;
 
 namespace DockerWeb.Controllers
 {
@@ -18,9 +17,10 @@ namespace DockerWeb.Controllers
     {
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly DBService _dbService;
+        private readonly IDbService _dbService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, DBService dbService)
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IDbService dbService)
         {
             _logger = logger;
             _dbService = dbService;
