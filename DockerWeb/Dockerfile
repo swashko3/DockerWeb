@@ -4,6 +4,7 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 5003
 ENV ASPNETCORE_URLS=http://*:5003
+HEALTHCHECK CMD curl --fail http://localhost:5003/health || exit
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src

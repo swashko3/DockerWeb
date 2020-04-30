@@ -16,19 +16,11 @@ namespace DockerWeb.Services
 
         public DBService(HttpClient client)
         {
-            //TODO: this needs to be configured for docker ip once image is built
-            //client.BaseAddress = new Uri("http://localhost:5002/");
-            //client.BaseAddress = new Uri("http://172.17.0.5:5002/");
-
             //attempt to get the asyncreference from the docker-compose, otherwise default to localhost
-            var host = Environment.GetEnvironmentVariable("ServiceHost");
+            var host = Environment.GetEnvironmentVariable("ServiceHost") ?? "localhost";
+            var port = Environment.GetEnvironmentVariable("ServicePort") ?? "5002";
 
-            if (host == null)
-            {
-                host = "localhost";
-            }
-
-            client.BaseAddress = new Uri($"http://{host}:5002/");
+            client.BaseAddress = new Uri($"http://{host}:{port}/");
 
             Client = client;
 

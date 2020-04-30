@@ -101,5 +101,12 @@ namespace DockerWeb.Controllers
         {
             return await _dbService.Delete(id);
         }
+
+        [HttpGet]
+        [Route("/Liveness")]
+        public ActionResult Liveness()
+        {
+            return Ok();
+        }
     }
 }

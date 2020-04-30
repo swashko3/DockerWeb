@@ -1,16 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DockerWeb.HealthChecks;
 using DockerWeb.Interfaces;
 using DockerWeb.Services;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 using Microsoft.OpenApi.Models;
 
@@ -28,8 +27,21 @@ namespace DockerWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var dbServiceHost = Environment.GetEnvironmentVariable("ServiceHost") ?? "localhost";
+            var dbServicePort = Environment.GetEnvironmentVariable("ServicePort") ?? "5002";
+            var connection = Environment.GetEnvironmentVariable("DefaultConnection") ?? Configuration.GetConnectionString("DefaultConnection");
+
             services.AddControllers();
-            services.AddHttpClient<IDbService, DBService>();
+            services.AddHttpClient<IDbService, DBService>(); // Register the DB Service
+
+            services
+                .AddHealthChecks()
+                .AddCheck("Self", new ServiceHealthCheck("http://localhost:5003/Liveness"), HealthStatus.Unhealthy, new string[] { "Self" })
+                .AddCheck("DBService", new ServiceHealthCheck($"http://{dbServiceHost}:{dbServicePort}/Liveness"), HealthStatus.Unhealthy, new string[] { "DbService" })
+                .AddCheck("PostgreSQL", new PostgreSqlHealthCheck(connection), HealthStatus.Unhealthy, new string[] { "PostgreSQL" });
+
+            services.AddHealthChecksUI();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -73,12 +85,28 @@ namespace DockerWeb
             });
 
             app.UseRouting();
-
             app.UseAuthorization();
+            app.UseHealthChecksUI();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            const string healthCheckApiPath = "/health";
+
+            app.UseHealthChecks(healthCheckApiPath,
+            new HealthCheckOptions()
+            {
+                Predicate = _ => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            })
+            .UseHealthChecksUI(options =>
+            {
+                options.UIPath = $"{healthCheckApiPath}-ui";
+                options.ApiPath = $"{healthCheckApiPath}-api";
+                options.UseRelativeApiPath = false;
+                options.UseRelativeResourcesPath = false;
             });
         }
     }
